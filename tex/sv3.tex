@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{ocgx}
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{{Algorithms SV worksheet 3}}
+\author{Bálint Molnár}
+
+\begin{document}
+\maketitle
+
+
+\section{Trees}
+
+\begin{enumerate}
+   \item Prove that, in a binary search tree, if node n has two children, then
+its successor has no left child.
+\item Prove that, if a key is not in a bottom node, its successor, if it exists, must be.
+\item Write pseudocode for insertion and deletion to a red-black tree (without converting to a B-tree)
+\item What is the time complexity of merging two binary heaps?
+
+\end{enumerate}
+
+\section{Hash Tables}
+
+\begin{enumerate}
+    \item Make a hash table with 8 slots and insert into it the following values:
+15, 23, 12, 20, 19, 8, 7, 17, 10, 11.\\
+Use the hash function 
+h(k) = (k mod 10) mod 8,
+and resolve collisions by chaining
+\item How can you handle deletions from an open addressing table? What are the
+problems of the obvious naïve approach?
+\item One idea to avoid handling collisions is to make the hash table large enough so that the chances of having a collision are negligible. Explain why it is not feasible.\\
+\switchocg{name_int}{\textcolor{blue}{Hint:}}
+\colorbox{black}{
+\begin{ocg}{name_ext}{name_int}{0}
+\textcolor{white}{Look up the birthday problem}
+\end{ocg}}
+
+\item Find another use of hash functions in Computer Science/Software Engineering. Explain what properties of hash functions are required for this use case, and why you also need them for hash tables.
+\end{enumerate}
+\section{Exam Questions}
+\begin{enumerate}
+    \item \url{https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p10q9.pdf}
+    \item \url{https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p1q11.pdf}
+\end{enumerate}
+
+
+\end{document}
