@@ -2,25 +2,62 @@ name: Tex Compile
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "tex/**.tex"
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install LaTeX
+
+      # Cache TeX Live installation
+      - name: Cache TeX Live
+        id: cache-tex
+        uses: actions/cache@v3
+        with:
+          path: |
+            /usr/share/texlive
+            /var/lib/texmf
+            /usr/local/texlive
+          key: ${{ runner.os }}-texlive-v1
+
+      # Install minimal TeX if cache is missing
+      - name: Install minimal LaTeX
+        if: steps.cache-tex.outputs.cache-hit != 'true'
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-full
-      - name: Compile tex files
+          sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+
+      # Try compiling with minimal TeX
+      - name: Compile tex files (try minimal)
+        id: compile-minimal
+        continue-on-error: true
         run: |
           chmod +x scripts/build-tex.sh
-          scripts/build-tex.sh
+          ./scripts/build-tex.sh
+
+      # If minimal failed, install full TeX and recompile
+      - name: Install full TeX Live
+        if: steps.compile-minimal.outcome == 'failure'
+        run: |
+          sudo apt-get install -y texlive-full
+
+      - name: Recompile with full TeX
+        if: steps.compile-minimal.outcome == 'failure'
+        run: ./scripts/build-tex.sh
+
+      # Commit PDFs to repo
       - name: Commit PDFs
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add tex/*.pdf
-          git commit -m "Add PDFs"
+          git add static/pdfs/*.pdf
+          git commit -m "Add PDFs" || echo "No changes to commit"
           git push
