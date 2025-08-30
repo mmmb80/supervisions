@@ -1,7 +1,7 @@
 import type { Config } from '@docusaurus/types';
 
 const config: Config = {
-  title: 'My Website',
+  title: 'Bálint Molnár',
   url: 'https://mmmb80.github.io', 
   baseUrl: '/supervisions/',                 
   projectName: 'supervisions',
