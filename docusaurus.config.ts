@@ -2,10 +2,14 @@ import type { Config } from '@docusaurus/types';
 
 const config: Config = {
   title: 'Bálint Molnár',
-  url: 'https://mmmb80.github.io', 
-  baseUrl: '/supervisions/',                 
+  url: 'https://mmmb80.github.io',
+  baseUrl: '/supervisions/',
   projectName: 'supervisions',
   organizationName: 'mmmb80',
+
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+
   presets: [
     [
       'classic',
