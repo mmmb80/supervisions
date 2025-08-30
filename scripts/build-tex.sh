@@ -1,7 +1,5 @@
 #!/bin/bash
-
 mkdir -p static/pdfs
-
 for file in tex/*.tex; do
   echo "Compiling $file..."
   filename=$(basename "$file" .tex)
