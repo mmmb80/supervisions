@@ -1,9 +1,22 @@
-# My Documents
-## PDFs
-* [complexity1.pdf](/pdfs/complexity1.pdf)
-* [main.pdf](/pdfs/main.pdf)
-* [sv2.pdf](/pdfs/sv2.pdf)
-* [sv3.pdf](/pdfs/sv3.pdf)
-* [sv4.pdf](/pdfs/sv4.pdf)
-* [sv5.pdf](/pdfs/sv5.pdf)
-* [sv6.pdf](/pdfs/sv6.pdf)
+# Supervision work
+## Foundations of CS (24-25)
+
+* [Supervision 1](/pdfs/focs1.pdf)
+* [Supervision 2](/pdfs/focs2.pdf)
+* [Supervision 3](/pdfs/focs3.pdf)
+
+## Information Theory (24-25)
+
+* [Supervision 1](/pdfs/infoth1.pdf)
+* [Supervision 2](/pdfs/infoth2.pdf)
+* [Supervision 3](/pdfs/infoth3.pdf)
+
+## Algorithms (24-25)
+* [Supervision 1](/pdfs/algo1.pdf)
+* [Supervision 2](/pdfs/algo2.pdf)
+* [Supervision 3](/pdfs/algo3.pdf)
+* [Supervision 4](/pdfs/algo4.pdf)
+* [Supervision 5](/pdfs/algo5.pdf)
+* [Supervision 6](/pdfs/algo6.pdf)
+* ## Complexity Theory (24-25)
+* [Supervisions 1,2,3](/pdfs/complexity1.pdf)

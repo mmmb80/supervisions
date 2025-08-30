@@ -1,7 +1,14 @@
 #!/bin/bash
+set -e
+
 mkdir -p static/pdfs
+
 for file in tex/*.tex; do
-  filename=$(basename "$file" .tex)
   echo "Compiling $file..."
-  pdflatex -interaction=nonstopmode -output-directory=static/pdfs "$file"
+  filename=$(basename "$file" .tex)
+
+  # latexmk automatically runs pdflatex multiple times and handles images
+  latexmk -pdf -interaction=nonstopmode -halt-on-error -output-directory=tex "$file"
+
+  mv "tex/$filename.pdf" "static/pdfs/$filename.pdf"
 done
