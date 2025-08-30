@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Foundations of Computer Science -- Supervision 3}
+\author{}
+\date{}
+
+% Style so question body appears below label
+\setlist[enumerate,1]{label=\textbf{Question \arabic*:}, leftmargin=0pt,
+  itemindent=! , labelsep=1em, align=left, labelwidth=*, listparindent=0pt}
+\setlist[enumerate,2]{label=(\alph*), leftmargin=2em}
+\setlist[enumerate,3]{label=(\roman*), leftmargin=3em}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+% Q1
+\item
+\begin{enumerate}
+    \item Code an analogue of \verb|map| and \verb|filter| for sequences.
+
+    \item Create a lazy list of:
+    \begin{enumerate}
+        \item even numbers
+        \item square numbers
+        \item integers that are not divisible by three
+    \end{enumerate}
+
+    \item What happens if you run \verb|filter (x -> x mod 2 = 1)| on the sequence of even numbers? Why?
+
+    \item Define a type representing rational numbers.  
+    Then define a lazy list containing positive rational numbers.  
+    A number may appear in the sequence multiple times, but all rational numbers should be in the sequence.
+
+    \item (Optional) Define a lazy list containing all finite sets of integers.  
+    Is it possible to define a lazy list containing all sets of integers?
+\end{enumerate}
+
+% Q2
+\item
+\begin{enumerate}
+    \item Compare depth-first search, breadth-first search and iterative deepening.  
+    What factors decide which technique should be used in a certain scenario?
+
+    \item A lazy binary tree is either empty or is a branch containing a label and two lazy binary trees, possibly to infinite depth.  
+    Present an OCaml datatype to represent lazy binary trees, along with a function that accepts a lazy binary tree and produces a lazy list that contains all of the tree’s labels.  
+    The order of the elements in the lazy list does not matter, as long as it contains all potential tree nodes.
+
+    \item Define a datatype representing lazy (general) trees, where nodes may have arbitrarily many (possibly infinitely many) children.
+
+    \item How would you traverse a tree described in part (c)?
+
+    \item (Optional) Define a lazy tree with arbitrarily long paths (i.e. for any integer $n$, there exists a path of length $n$), that has no infinite-length path.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

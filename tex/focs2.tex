@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Foundations of Computer Science -- Supervision 2}
+\author{}
+\date{}
+
+% Style so question body appears below label
+\setlist[enumerate,1]{label=\textbf{Question \arabic*:}, leftmargin=0pt,
+  itemindent=! , labelsep=1em, align=left, labelwidth=*, listparindent=0pt}
+\setlist[enumerate,2]{label=(\alph*), leftmargin=2em}
+\setlist[enumerate,3]{label=(\roman*), leftmargin=3em}
+
+\begin{document}
+\maketitle
+
+
+\begin{enumerate}
+
+% Q1
+\item
+\begin{enumerate}
+    \item Your friend suggests the following modification for quicksort:  
+    Instead of choosing one pivot, choose two and partition the list into three lists:
+    \begin{itemize}
+        \item The elements smaller than both pivots
+        \item The elements bigger than both pivots
+        \item The elements between the two
+    \end{itemize}
+    Implement this variant of the algorithm.
+
+    \item Comment on the approach in part (a). Is it correct? Is it faster than regular quicksort?
+
+    \item Implement an algorithm that takes a list of integers and an integer $k$, and 
+    returns the $k$th smallest element. Aim for something faster than sorting 
+    algorithms. State the average and worst-case time complexity of your algorithm.
+\end{enumerate}
+
+% Q2
+\item
+\begin{enumerate}
+    \item \href{https://en.wikipedia.org/wiki/Tower_of_Hanoi}{Tower of Hanoi} is a mathematical game.  
+    The game consists of three rods and $n$ disks, with diameters $1,2,\dots,n$.  
+    Initially, all disks are stacked in one rod in order (the smallest one on top).  
+    The goal is to move them all to the second rod, with the following conditions:
+    \begin{itemize}
+        \item In one move, you can pick up one disk from the top of one rod and place it on the top of another one.
+        \item At all times, a larger disk is never on top of a smaller one.
+    \end{itemize}
+    Create a type to represent the rods of the game.
+
+    \item Create a datatype to describe a move in the game. Use good coding practices.
+
+    \item Implement a function that takes the value $n$ and returns a list of moves that move all disks from the first rod to 
+    the second rod while respecting the rules of the game. 
+\end{enumerate}
+
+% Q3
+\item
+\href{https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2009p1q2.pdf}{2009 Paper 1 Question 2} questions b, c.
+
+% Q4
+\item
+\begin{enumerate}
+    \item In this task, you will be coding some operations for integer binary search trees.  
+    Assume the following type for the tree:  
+    \begin{verbatim}
+type bst = Branch of int * bst * bst | Leaf
+    \end{verbatim}
+    Implement a function that inserts a new key into a binary search tree.
+
+    \item Implement a function that takes two binary search trees so that all keys in the second tree are bigger than the keys in the first tree, and merges them 
+    into one binary search tree.
+
+    \item Implement a function that removes a key from the tree.
+
+    \item Implement a function \verb|split| that takes a binary search tree and a value $n$ 
+    and splits it into two binary search trees, so that the first tree consists of all keys smaller than $n$, 
+    and the second consists of values bigger than (or equal to) $n$.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

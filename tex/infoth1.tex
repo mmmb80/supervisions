@@ -1,0 +1,83 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Information Theory SV1}
+\author{}
+\date{}
+
+% Style so question body appears below label
+\setlist[enumerate,1]{label=\textbf{Question \arabic*:}, leftmargin=0pt,
+  itemindent=! , labelsep=1em, align=left, labelwidth=*, listparindent=0pt}
+\setlist[enumerate,2]{label=(\alph*), leftmargin=2em}
+\setlist[enumerate,3]{label=(\roman*), leftmargin=3em}
+\setlist[enumerate,4]{label=(\alph*), leftmargin=4em}
+
+\begin{document}
+\maketitle
+
+\emph{\textbf{Question sources:} Matthew Ireland's SV worksheet, 23/24 Examples Sheet
+}
+
+
+
+\begin{enumerate}
+    \item What is the maximum possible entropy $H$ of an alphabet consisting of $N$ different letters?  
+    In such a maximum entropy alphabet, what is the probability of its most likely letter?  
+    What is the probability of its least likely letter?
+
+    \item If discrete symbols from an alphabet $S$ having entropy $H(S)$ are encoded into blocks of length $n$ symbols, we derive a new alphabet of symbol blocks $S^n$.  
+    If the occurrence of symbols is independent, derive the entropy $H(S^n)$ of this new alphabet.
+
+    \item Why are fixed-length codes inefficient for alphabets whose letters are not equiprobable?  
+    Discuss this in relation to Morse Code.
+
+    \item A fair coin is secretly flipped until the first head occurs.  
+    Let $X$ denote the number of flips required.  
+    The flipper will truthfully answer any “yes-no” questions about his experiment, and we wish to discover thereby the value of $X$ as efficiently as possible.
+    \begin{enumerate}
+        \item What is the most efficient possible sequence of such questions?
+        \item On average, how many questions should we need to ask?
+        \item Relate the sequence of questions to the bits in a uniquely decodable prefix code for $X$.
+    \end{enumerate}
+
+    \item Is it possible to construct a prefix code in which the codewords have the following lengths: 1, 2, 3, 3, 4, 4?
+
+    \item Implement an algorithm (in your chosen programming language) that takes a list of codeword lengths and either provides a prefix code with these lengths or reports that it is impossible.
+
+    \item Construct an ensemble where the difference between the entropy and the expected length of the Huffman code is as large as you can make it.
+
+    \item Is it possible for two people to use the same set of alphabet probabilities to produce Huffman codes with a differing set of lengths?
+
+    \item Consider the following symbol encoding scheme:
+    \begin{enumerate}
+        \item Each input symbol is associated with a probability of occurrence and an initially blank codeword.
+        \item Partition the set of input symbols into two subsets, where the sum of the probabilities in each subset is as close to equal as possible.
+        \item Append a 0 to every codeword in the first subset and a 1 to every codeword in the second subset.
+        \item Recurse on each subset until there is only one symbol left in each partition.
+    \end{enumerate}
+    Does this produce instantaneous codes?  
+    How does it compare to Huffman coding?  
+    (Note: full analysis of the average codeword length is non-trivial and not required, but you may attempt it.)
+
+    \item [Mackay ex 4.9] While some people, when they first encounter the weighing problem with 12 balls and the three-outcome balance, think that weighing six balls against six balls is a good first weighing, others say “no, weighing six against six conveys no information at all”.  
+    Explain to the second group why they are both right and wrong.  
+    Compute the information gained about which is the odd ball, and the information gained about which is the odd ball and whether it is heavy or light.
+
+    \item You are tasked with investigating a funky random number generator, which generates integers $i$, where $1 \leq i \leq n$.  
+    The true distribution $(p_1, p_2, \dots, p_n)$ is unknown, but the average $\mu$ is known.  
+    In order to perform inference and estimate the posterior distribution using Bayes’ theorem, we need a prior distribution.
+    \begin{enumerate}
+        \item Show, using the method of Lagrange multipliers, that for the maximum entropy prior, $p_i$ can be written as $C r^i$ for some $C$ and $r$.
+        \item Use normalisation to find $C$.
+        \item Use the known average of the distribution to obtain the following equation:
+        \[
+        n r^{n+1} - (n+1) r^n + 1 = \mu (r^n - 1)(r-1)
+        \]
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}

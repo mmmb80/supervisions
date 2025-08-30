@@ -1,0 +1,69 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath}
+
+\title{Information Theory SV3}
+\author{}
+\date{}
+
+% Style so question body appears below label
+\setlist[enumerate,1]{label=\textbf{Question \arabic*:}, leftmargin=0pt,
+  itemindent=! , labelsep=1em, align=left, labelwidth=*, listparindent=0pt}
+\setlist[enumerate,2]{label=(\alph*), leftmargin=2em}
+\setlist[enumerate,3]{label=(\roman*), leftmargin=3em}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+
+% Q1
+\item
+\begin{enumerate}
+    \item Consider two discrete probability distributions $p(x)$ and $q(x)$ over the same set of four values $\{x\}$ of a random variable:
+
+    \[
+    \begin{array}{|c||c|c|c|c|}
+    \hline
+    x & 1 & 2 & 3 & 4 \\
+    \hline
+    p(x) & \tfrac{1}{8} & \tfrac{1}{8} & \tfrac{1}{4} & \tfrac{1}{2} \\ \hline
+    q(x) & \tfrac{1}{4} & \tfrac{1}{4} & \tfrac{1}{4} & \tfrac{1}{4} \\ \hline
+    \end{array}
+    \]
+
+    \begin{enumerate}
+        \item Calculate the cross-entropy $H(p, q)$ (unfortunate notation!) between $p(x)$ and $q(x)$.
+        \item Calculate their Kullback–Leibler divergence $D_{KL}(p \| q)$.
+        \item Comment on the use of the metrics $H(p, q)$ and $D_{KL}(p \| q)$ in machine learning and for calculating the efficiency of codes.
+    \end{enumerate}
+
+    \item Explain the concept of entropy in:
+    \begin{enumerate}
+        \item Classical thermodynamics (“entropy”, developed by Clausius and others).
+        \item Statistical mechanics (“statistical entropy”, developed by Boltzmann and others – presented in Lecture 12).
+        \item Information theory (“information entropy”, developed by Shannon).
+    \end{enumerate}
+
+    \item A continuous communication channel adds Gaussian white noise to signals transmitted through it.  
+    The ratio of signal power to noise power is 30 decibels, and the frequency bandwidth of this channel is 10 MHz.  
+    Roughly what is the information capacity $C$ of this channel, in bits/second?
+
+    \item Given two (binary) noisy channels with capacities $C_1$ and $C_2$, determine the capacity of the concatenation of the two channels (i.e. the output of the first channel is the input of the second).
+
+    \item Explain what is meant by the Kullback–Leibler divergence, and why it is a divergence and not a distance.
+
+    \item $Y$ and $Z$ are two continuous random variables.  
+    $Y$ has an exponential probability density distribution $p(x)$ over $x \in [0, \infty)$: $p(x) = e^{-x}$.  
+    $Z$ has a uniform probability density distribution: $p(x) = 1/\alpha$ for $x \in [0, \alpha]$, else $p(x) = 0$.  
+
+    Calculate the differential entropies $h(Y)$ and $h(Z)$ for these two continuous random variables, and find the value of $\alpha$ for which these differential entropies are the same.  
+    Sketch these distributions.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

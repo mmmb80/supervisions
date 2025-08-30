@@ -1,0 +1,117 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Foundations of Computer Science -- Supervision 1}
+\author{}
+\date{}
+
+% Define enumerate style so body appears below label
+\setlist[enumerate,1]{label=\textbf{Question \arabic*:}, leftmargin=0pt,
+  itemindent=! , labelsep=1em, align=left, labelwidth=*, listparindent=0pt}
+
+\setlist[enumerate,2]{label=(\alph*), leftmargin=2em}
+\setlist[enumerate,3]{label=(\roman*), leftmargin=3em}
+
+\begin{document}
+\maketitle
+
+
+
+\begin{enumerate}
+
+% Q1
+\item
+\begin{enumerate}
+    \item Why do we need types in programming languages?
+
+    \item What is the type of the following values? Briefly justify:
+    \begin{enumerate}
+        \item \begin{verbatim}
+let a x y = x
+\end{verbatim}
+        \item \begin{verbatim}
+let b x y z = if x then y else z
+\end{verbatim}
+        \item \begin{verbatim}
+let c x y = x y
+\end{verbatim}
+        \item \begin{verbatim}
+let rec d _ x = d [ x ] true
+\end{verbatim}
+    \end{enumerate}
+
+    \item Define values with the following types (without using type annotations):
+    \begin{enumerate}
+        \item \verb|'a -> 'a|
+        \item \verb|int -> int list|
+        \item \verb|('a -> 'b) -> ('b -> 'c) -> 'a -> 'c|
+        \item \verb|('a -> 'b) -> 'a list -> 'b list|
+    \end{enumerate}
+\end{enumerate}
+
+% Q2
+\item
+\begin{enumerate}
+    \item For each function below, state its behaviour and its time and space complexities. 
+    Assume no compiler optimisation (tail-recursion doesn’t count as compiler optimisation). Justify your answers.
+    \begin{enumerate}
+        \item \begin{verbatim}
+let rec f pred l = match l with
+  | [] -> 0
+  | x :: xs -> if pred x then 1 else 0 + f pred xs
+\end{verbatim}
+
+        \item \begin{verbatim}
+let rec g n = if n > 1 then g (n - 1) + g (n - 2) else n
+\end{verbatim}
+    \end{enumerate}
+\end{enumerate}
+
+% Q3
+\item 
+\begin{enumerate}
+    \item Write a function that takes a positive integer n and returns a list of its factors.  
+    For example: \verb|factors 12 = [1;2;3;4;6;12]|.  
+    The order of the factors in the list can be arbitrary, and you can assume that the argument is always positive.
+
+    \item What is the time complexity of your algorithm? Can you think of a way to improve it?
+\end{enumerate}
+
+% Q4
+\item 
+\href{https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y1995p1q3.pdf}{Link to past paper question}
+
+% Q5
+\item 
+\begin{enumerate}
+    \item Implement the following utility functions on lists.  
+    Make sure that all recursive calls are tail-recursive:
+
+    \begin{enumerate}
+        \item reverse:
+        \begin{verbatim}
+reverse [x1;...;xn] is [xn;...;x1]
+\end{verbatim}
+
+        \item map:
+        \begin{verbatim}
+map f [x1;...;xn] is [f(x1);...;f(xn)]
+\end{verbatim}
+
+        \item filter: filter p l is the list containing the elements of l that 
+        satisfy the predicate p, in the order that they appear in l.
+
+        \item left fold:
+        \begin{verbatim}
+fold_left f a [b1;b2;...;bn]
+= f (... (f (f a b1) b2) ...) bn
+\end{verbatim}
+    \end{enumerate}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
