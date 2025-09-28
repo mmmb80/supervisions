@@ -55,7 +55,7 @@
     \item Prove that the height of \color{red}
         some
     \color{black} BFS spanning tree is minimal (among all spanning tree heights).
-    \item \emph{(Difficult:)} An edge $e$ in a connected graph $G$ is called a \emph{bridge}, if removing it disconnects the graph. Design an algorithm that finds all the bridges in linear time.\\ Hint: use the property of DFS spanning trees from Q2.
+    \item \emph{(Difficult)} An edge $e$ in a connected graph $G$ is called a \emph{bridge}, if removing it disconnects the graph. Design an algorithm that finds all the bridges in linear time.\\ Hint: use the property of DFS spanning trees from Q2.
 \end{enumerate}
 
 \section{Shortest Paths}
@@ -66,8 +66,7 @@ distance($u$ to $v$) $\leq$ distance($u$ to $w$) + cost($w \rightarrow $v) for a
 Make sure your proof covers the cases where no path exists.
 \item Prove a more general variant: distance($u$ to $v$) $\leq$ distance($u$ to $w$) + distance ($w$ to $v$).
 
-\item Define $D_{u,v}$ for any pair of nodes, $u,v$.
-Assume they satisfy the following properties:
+\item Assume there exist values $D_{u,v}$ for any pair of nodes, $u,v$, which satisfy the following properties:
 \begin{enumerate}
     \item $D_{u,u}\leq 0$ for all $u$
     \item $D_{u,v}\leq \mathrm{cost}(u\rightarrow v)$ for all $u,v$.
@@ -76,12 +75,10 @@ Assume they satisfy the following properties:
 
 Prove that $D_{u,v} \leq \mathrm{distance}(u\,\mathrm{to}\,v )$ for all $u,v$
 
+\item The \href{https://www.cl.cam.ac.uk/teaching/2324/Algorithm1/content/algorithms2.pdf}{notes from 2024} use a different Dijkstra's implementation. Please read the relevant part of the notes, and explain how the implementation differs from the one you saw on your lecture. What do you think, which one is faster in better?
 
-\item Show that Dijkstra's algorithm eventually terminates if the graph has negative-weight edges, but no negative cycles. What is its worst-case complexity for these graphs?
+\item Show that the old note's Dijkstra's algorithm eventually terminates with the correct result if the graph has negative-weight edges, but no negative cycles. What is its worst-case complexity for these graphs?
 
-\item We are given a directed graph where each edge is labelled with a weight, and where the vertices are
-numbered $1,\dots,n$. Assume it contains no negative weight cycles. Define $F_{(i,j)}(k)$ to be the minimum weight path from $i$
-to $j$, such that every intermediate vertex is in the set $\{1,\dots,k\}$. Give a dynamic programming equation for $F_{(i,j)}(k)$, and a
-suitable definition for $F_{(i,j)}(0)$
+\item Briefly explain four different algorithms to solve the All-Pairs Shortest Path problem. Compare their time complexities, and explain the benefits of each approach.
 \end{enumerate}
 \end{document}
