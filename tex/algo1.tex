@@ -32,11 +32,11 @@ Prove the following equalities/inequalities:
 \begin{itemize}
     \item $| \sin(n)| = O(1)$
     \item $| \sin(n)| \neq  \Theta(1)$
-    \item $ 200 + \sin(n)\neq  \Theta(1)$
+    \item $ 200 + \sin(n) =  \Theta(1)$
     \item $n^{100} = o(2^n)$
 \end{itemize}
 \item 
-By drawing its recursion tree, Solve the following recurrence relation: $T(n)=3T(n/2)+\Theta(n).$
+By drawing its recursion tree, solve the following recurrence relation: $T(n)=3T(n/2)+\Theta(n).$
 
 \end{enumerate}
 
@@ -44,16 +44,13 @@ By drawing its recursion tree, Solve the following recurrence relation: $T(n)=3T
 
 \begin{enumerate}
     \item What is the smallest number of pairwise comparisons you need to perform to
-find the smallest of n items?
+find the smallest of n items? Justify your solution.
 \item And to find the second smallest?
 \item Can picking the pivot at random really make any difference to the
 expected performance? How will it affect the average case? The
 worst case? Discuss.
-\item Consider the following method for an array of size $n$:
 
-Split the array into groups of $5$ (for simplicity, assume that is a multiple of 5). Take the medians from all groups (i.e. the third largest from each group). Then let $x$ be the median of medians. Show that there exist constants $C_1$ and $C_2$ such that the rank of $x$ in the original array is between $C_1n$ and $C_2n$ for a large enough $n$.
-
-\item Explain how this can be used to achieve an $O(n)$ worst-case time complexity for finding the element with rank $k$.
+\item Explain how you can achieve an $O(n)$ worst-case time complexity for finding the element with rank $k$.
 \item Write pseudocode for the bottom-up mergesort.
 \end{enumerate}
 

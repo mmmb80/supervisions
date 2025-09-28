@@ -44,13 +44,13 @@
 
     \begin{verbatim}
         class Tree<T> {
-            private T value;
-            private List<Tree<T>> children;
+            T value;
+            List<Tree<T>> children;
         }
     \end{verbatim}
     in Java.
 
-    Design an algorithm that finds the longest path in the tree. See example below:
+    Design an algorithm that finds the longest path in the tree. See example below\\ \emph{(please note that the longest path is not necessarily the longest downward path from the root, it may include both upwards and downwards steps)}:
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.32\linewidth]{longest-path.png}
@@ -62,7 +62,7 @@
 \section{Greedy Algorithms}
 
 \begin{enumerate}
-    \item $N$ guests were invited. Each guest has indicated in advance the time intervals during which they will be present. The organizers want to capture all attendees in photographs during the event. Their goal is to take the minimum number of photos while ensuring that every guest appears in at least one photo.
+    \item $N$ guests were invited. Each guest has indicated in advance the time intervals during which they will be present. The organisers want to capture all attendees in photographs during the event. Their goal is to take the minimum number of photos while ensuring that every guest appears in at least one photo.
 
     Design an algorithm that calculates the minimum number of photographs required and also determines the specific times when group photos should be taken.
     \item You are driving on a highway of length $L$ kilometres, with a car with  $T$ units of fuel tank capacity. Initially, the tank is full, and every kilometre uses $1$ unit of fuel. There are $N$ petrol stations, and the $i$-th station is $A[i]$ kilometres away from your starting point.

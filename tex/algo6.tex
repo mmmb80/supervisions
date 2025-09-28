@@ -64,41 +64,7 @@ Extend your algorithm to also support the following operation, and analyse its a
 
 This question is from Alstrup and Rauhe, via Inge Li Gørt.
 
-\item
-You have an island represented by an $N \times M$ grid, with two harbours located on the boundary (either in the first or last row or first or last column). You want to build a border checkpoint line, i.e., a set of cells such that any path between the two harbours must pass through at least one checkpoint cell (a path is a sequence of moves to neighbouring cells, diagonals excluded. Checkpoints cannot be built on harbour cells). Each cell $(i,j)$ has an associated cost $A[i,j]$ to build a checkpoint. 
 
-Find a set of checkpoints satisfying the requirements with minimal cost.
-
-\textbf{Example}
-
-\begin{center}
-\begin{tikzpicture}
-    \draw[step=1cm,gray,very thin] (0,0) grid (5,5);
-    
-    \foreach \x in {0,...,4} {
-        \foreach \y in {0,...,4} {
-            \node at (\x+0.5,\y+0.5) {};
-        }
-    }
-    
-    % Highlight harbours
-    \fill[blue!50] (0,4) rectangle (1,5);
-    \fill[blue!50] (3,0) rectangle (4,1);
-    
-    % Highlight an example checkpoint
-    \fill[red!50] (4,1) rectangle (5,2);
-    \fill[red!50] (3,2) rectangle (4,3);
-    \fill[red!50] (2,2) rectangle (3,3);
-    \fill[red!50] (1,1) rectangle (2,2);
-    \fill[red!50] (1,0) rectangle (2,1);
-
-    % Labels
-    \node[above] at (0.5,4.5) {Harbour};
-    \node[below] at (3.2,0.8) {Harbour};
-    \node at (2.9,2.5) {Checkpoints};
-
-\end{tikzpicture}
-\end{center}
 
 \item
 \begin{enumerate}
@@ -138,9 +104,15 @@ The Travelling Salesman Problem (TSP) is a classic combinatorial optimization pr
     \emph{ Hint: How many branching clauses (e.g. if-else, switch statements etc.) do you need to enter? The argument is similar to the sorting lower bound.}
    
 \end{enumerate}
-\end{enumerate}
 
-\end{document}
+
+    \item In a country, there are direct train routes between railway stations, each with a given travel time (The train network is a weighted undirected graph). We define the distance between two nodes as the length of the shortest path between them.
+
+Train tickets in this country specify only the departure and destination stations. Travelers can take multiple routes between these stations, but with one restriction: at no point during the journey can they travel farther from the destination than they were when they boarded the train (i.e. you cannot take a train from city $C$ to $D$ if $D$ is further away from your destination than $C$. You are allowed to take a train multiple times as long as this constraint is not violated).
+
+You have a ticket between cities $A$ and $B$. The country has beautiful railway stations, and you want to visit as many of them as possible.
+
+Design an algorithm that calculates the maximum number of stations you can visit using a ticket between cities A and B.
 
 \end{enumerate}
 \end{document}

@@ -1,5 +1,5 @@
 # Supervision work
-## Foundations of CS (24-25)
+## Foundations of CS (25-26)
 
 * [Supervision 1](/pdfs/focs1.pdf)
 * [Supervision 2](/pdfs/focs2.pdf)
@@ -11,7 +11,7 @@
 * [Supervision 2](/pdfs/infoth2.pdf)
 * [Supervision 3](/pdfs/infoth3.pdf)
 
-## Algorithms (24-25)
+## Algorithms (25-26, DRAFT)
 * [Supervision 1](/pdfs/algo1.pdf)
 * [Supervision 2](/pdfs/algo2.pdf)
 * [Supervision 3](/pdfs/algo3.pdf)
