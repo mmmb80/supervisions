@@ -12,6 +12,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{tikz}
 
 \title{{Algorithms SV worksheet 5}}
 \author{Bálint Molnár}
@@ -19,12 +20,12 @@
 \begin{document}
 \maketitle
  
-\emph{I understand that the order in which the topics are taught has changed slightly from previous years. Before attempting the questions, make sure you know the following concepts/definitions: DAG, Minimum Spanning Tree/Kruskal's Algorithm, Max-flow problem/Ford-Fulkerson algorithm, Topological sort, Strongly Connected Components, Bipartite Graph Matching. You may want to use the \href{https://www.cl.cam.ac.uk/teaching/2324/Algorithm1/content/algorithms2.pdf}{notes from last year.}} 
+\emph{I understand that the order in which the topics are taught has changed slightly from previous years. Before attempting the questions, make sure you know the following concepts/definitions: DAG, Minimum Spanning Tree/Kruskal's Algorithm, Max-flow problem/Ford-Fulkerson algorithm, Topological sort, Strongly Connected Components, Bipartite Graph Matching. You may want to use the \href{https://www.cl.cam.ac.uk/teaching/2324/Algorithm1/content/algorithms2.pdf}{notes from 2024.}}
 
 \begin{enumerate}
-    \item If we take a DAG and reverse all the edges, do we get a DAG? Justify your answer.
+    \item If we take a DAG and reverse all the edges, do we get a DAG? Briefly justify your answer.
 
-    \item Let $G$ be a weighted graph with positive weights. Prove that, if you replace all the weights with their squares, the the resulting graph has the same Minimum Spanning Tree.
+    \item Let $G$ be a weighted graph with positive weights. Show that if you replace all the weights with their squares, the resulting graph has the same Minimum Spanning Tree.
 
     \item You are given an $N \times N $ grip represented y a matrix $A$ consisting of 0s and 1s. You want to choose $N$ cells in such a way that
     \begin{itemize}
@@ -35,24 +36,48 @@
 
     How would you find such a set of cells?
 
-    \item The Russian mathematician A.N. Tolstoı introduced the following problem in 1930. Consider a
-directed graph with edge capacities, representing the rail network. There are three types of vertex: supplies,
-demands, and ordinary interconnection points. There is a single type of cargo we wish to carry. Each demand
-vertex $v$ has a requirement $d_v > 0$. Each supply vertex $v$ has a maximum amount it can produce  $s_v$. Tolstoı
-asked: can the demands be met, given the supplies and graph and capacities, and if so then what flow will achieve
-this?
-Explain how to translate Tolstoı’s problem into a max-flow problem of the sort we studied in section 6.2 \color{red} (last year's notes) \color{black}.
 
-    \item \emph{(Difficult.)} You are given a DAG $G=(V,E)$, and a list of special nodes, $[a_1, ..., a_k]$. It is guaranteed that, for all $1 \leq 1 < k$, there is a path from $a_i$ to $a_{i+1}$.
+    \item You are given a DAG $G=(V,E)$, and a list of special nodes, $[a_1, ..., a_k]$. It is guaranteed that, for all $1 \leq 1 < k$, there is a path from $a_i$ to $a_{i+1}$.
 
     Design an algorithm that finds a topological sort of $G$ which minimises the ranks for all $a_i$ in the resulting list.
 
-    \item \emph{(Difficult.)} In a country, there are direct train routes between railway stations, each with a given travel time (The train network is a weighted undirected graph). We define the distance between two nodes as the length of the shortest path between them.
 
-Train tickets in this country specify only the departure and destination stations. Travelers can take multiple routes between these stations, but with one restriction: at no point during the journey can they travel farther from the destination than they were when they boarded the train (i.e. you cannot take a train from city $C$ to $D$ if $D$ is further away from your destination than $C$. You are allowed to take a train multiple times as long as this constraint is not violated).
+\item Explain how to solve \href{https://cses.fi/problemset/task/1677}{this coding problem} efficiently. Please include the full code in your preferred programming language, along with an explanation of your approach.
 
-You have a ticket between cities $A$ and $B$. The country has beautiful railway stations and you want to visit as many of them as possible.
+\item
+You have an island represented by an $N \times M$ grid, with two harbours located on the boundary (either in the first or last row or first or last column). You want to build a border checkpoint line, a set of cells such that any path between the two harbours must pass through at least one checkpoint cell. A path is a sequence of moves between neighbouring cells (left, right, up or down, no diagonal moves). Checkpoints cannot be built on harbour cells. Each cell $(i,j)$ has an associated cost $A[i,j]$ to build a checkpoint. 
 
-Design an algorithm that calculates the maximum number of stations you can visit using a ticket between cities A and B.
+Find a set of checkpoints that satisfies the requirements at a minimal cost.
+
+\textbf{Example}
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[step=1cm,gray,very thin] (0,0) grid (5,5);
+    
+    \foreach \x in {0,...,4} {
+        \foreach \y in {0,...,4} {
+            \node at (\x+0.5,\y+0.5) {};
+        }
+    }
+    
+    % Highlight harbours
+    \fill[blue!50] (0,4) rectangle (1,5);
+    \fill[blue!50] (3,0) rectangle (4,1);
+    
+    % Highlight an example checkpoint
+    \fill[red!50] (4,1) rectangle (5,2);
+    \fill[red!50] (3,2) rectangle (4,3);
+    \fill[red!50] (2,2) rectangle (3,3);
+    \fill[red!50] (1,1) rectangle (2,2);
+    \fill[red!50] (1,0) rectangle (2,1);
+
+    % Labels
+    \node[above] at (0.5,4.5) {Harbour};
+    \node[below] at (3.2,0.8) {Harbour};
+    \node at (2.9,2.5) {Checkpoints};
+
+\end{tikzpicture}
+\end{center}
 \end{enumerate}
 \end{document}

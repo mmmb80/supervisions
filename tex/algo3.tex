@@ -25,9 +25,8 @@
 \begin{enumerate}
    \item Prove that, in a binary search tree, if node n has two children, then
 its successor has no left child.
-\item Prove that, if a key is not in a bottom node, its successor, if it exists, must be.
-\item Write pseudocode for insertion and deletion to a red-black tree (without converting to a B-tree)
-\item What is the time complexity of merging two binary heaps?
+\item Prove that in a BST in which all nodes have either 0 or 2 children, if a key is not in a bottom node, its successor, if it exists, must be.
+\item Explain insertion and deletion to a red-black tree. Please use figures instead of just writing pseudocode.
 
 \end{enumerate}
 
@@ -40,21 +39,15 @@ Use the hash function
 h(k) = (k mod 10) mod 8,
 and resolve collisions by chaining
 \item How can you handle deletions from an open addressing table? What are the
-problems of the obvious naïve approach?
+problems with the obvious naïve approach?
 \item One idea to avoid handling collisions is to make the hash table large enough so that the chances of having a collision are negligible. Explain why it is not feasible.\\
-\switchocg{name_int}{\textcolor{blue}{Hint:}}
-\colorbox{black}{
-\begin{ocg}{name_ext}{name_int}{0}
-\textcolor{white}{Look up the birthday problem}
-\end{ocg}}
+\emph{Hint: Birthday problem}
 
 \item Find another use of hash functions in Computer Science/Software Engineering. Explain what properties of hash functions are required for this use case, and why you also need them for hash tables.
 \end{enumerate}
-\section{Exam Questions}
-\begin{enumerate}
-    \item \url{https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p10q9.pdf}
-    \item \url{https://www.cl.cam.ac.uk/teaching/exams/pastpapers/y2008p1q11.pdf}
-\end{enumerate}
+\section{Algorithm Design}
+Solve this \href{https://leetcode.com/problems/lru-cache/description/}{Leetcode problem}. You can use any programming languages (Python, Java or C++ preferred). Please send your code, with an explanation of your algorithm.\\
+\emph{This is a very standard coding interview question, so you might be tempted to just look up the solution. Please attempt it first without any help.}
 
 
 \end{document}

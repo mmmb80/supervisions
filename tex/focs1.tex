@@ -22,35 +22,6 @@
 
 \begin{enumerate}
 
-% Q1
-\item
-\begin{enumerate}
-    \item Why do we need types in programming languages?
-
-    \item What is the type of the following values? Briefly justify:
-    \begin{enumerate}
-        \item \begin{verbatim}
-let a x y = x
-\end{verbatim}
-        \item \begin{verbatim}
-let b x y z = if x then y else z
-\end{verbatim}
-        \item \begin{verbatim}
-let c x y = x y
-\end{verbatim}
-        \item \begin{verbatim}
-let rec d _ x = d [ x ] true
-\end{verbatim}
-    \end{enumerate}
-
-    \item Define values with the following types (without using type annotations):
-    \begin{enumerate}
-        \item \verb|'a -> 'a|
-        \item \verb|int -> int list|
-        \item \verb|('a -> 'b) -> ('b -> 'c) -> 'a -> 'c|
-        \item \verb|('a -> 'b) -> 'a list -> 'b list|
-    \end{enumerate}
-\end{enumerate}
 
 % Q2
 \item
@@ -109,6 +80,37 @@ map f [x1;...;xn] is [f(x1);...;f(xn)]
 fold_left f a [b1;b2;...;bn]
 = f (... (f (f a b1) b2) ...) bn
 \end{verbatim}
+    \end{enumerate}
+\end{enumerate}
+
+% Q1
+\item
+\begin{enumerate}
+    \item Why do we need types in programming languages?
+
+    \item What is the type of the following values? Briefly justify:
+    \begin{enumerate}
+        \item \begin{verbatim}
+let a x y = x
+\end{verbatim}
+        \item \begin{verbatim}
+let b x y z = if x then y else z
+\end{verbatim}
+        \item \begin{verbatim}
+let c x y = x y
+\end{verbatim}
+        \item \begin{verbatim}
+let rec d _ x = d [ x ] true
+\end{verbatim}
+    \end{enumerate}
+
+    \item Write functions with the following types (without using type annotations):
+    \begin{enumerate}
+        \item \verb|'a -> 'a|
+        \item \verb|int -> int list|
+        \item \verb|('a -> 'b) -> ('b -> 'c) -> 'a -> 'c|
+        \item \verb|('a -> 'b) -> 'a list -> 'b list|
+        \item \emph{(Tricky!)} \verb|'a -> 'b| 
     \end{enumerate}
 \end{enumerate}
 
