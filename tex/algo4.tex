@@ -22,7 +22,7 @@
 
 \section{Graph Traversal}
 
-     Let $G=(V,E)$ be a connected graph. A tree $T=(V',E')$ is a spanning tree of $G$, if
+     Let $G=(V, E)$ be a connected graph. A tree $T=(V',E')$ is a spanning tree of $G$, if
     \begin{itemize}
         \item $V=V'$
         \item $E' \subseteq E$
@@ -50,11 +50,9 @@
 
     Calculate and visualise the algorithm's spanning tree on the graph above.
    
-    \emph{Feel free to use AI tools, StackOverflow, etc. for the graph preprocessing and the visualisation, but please write the main code by yourself.}
-    \item For the graph in the previous exercise, verify that for any edge $(u,v)$, that is NOT in the spanning tree, either $u$ is an ancestor of $v$, or $v$ is an ancestor of $u$ in the spanning tree. Prove that any DFS spanning tree has this property.
-    \item Prove that the height of \color{red}
-        some
-    \color{black} BFS spanning tree is minimal (among all spanning tree heights).
+    \emph{Feel free to use AI tools, StackOverflow, etc., for the graph preprocessing and the visualisation, but please write the main code by yourself.}
+    \item For the graph in the previous exercise, verify that for any edge $(u,v)$ that is NOT in the spanning tree, either $u$ is an ancestor of $v$, or $v$ is an ancestor of $u$ in the spanning tree. Prove that any DFS spanning tree has this property.
+    \item Prove that the height of \color{red} some \color{black} BFS spanning tree is minimal (among all spanning tree heights).
     \item \emph{(Difficult)} An edge $e$ in a connected graph $G$ is called a \emph{bridge}, if removing it disconnects the graph. Design an algorithm that finds all the bridges in linear time.\\ Hint: use the property of DFS spanning trees from Q2.
 \end{enumerate}
 
@@ -63,7 +61,7 @@
 \begin{enumerate}
     \item In a directed graph with edge weights, give a formal proof of the triangle inequality
 distance($u$ to $v$) $\leq$ distance($u$ to $w$) + cost($w \rightarrow $v) for all vertices $u,v,w$ with $w \rightarrow v$.
-Make sure your proof covers the cases where no path exists.
+Ensure your proof covers cases where no path exists.
 \item Prove a more general variant: distance($u$ to $v$) $\leq$ distance($u$ to $w$) + distance ($w$ to $v$).
 
 \item Assume there exist values $D_{u,v}$ for any pair of nodes, $u,v$, which satisfy the following properties:
@@ -75,7 +73,7 @@ Make sure your proof covers the cases where no path exists.
 
 Prove that $D_{u,v} \leq \mathrm{distance}(u\,\mathrm{to}\,v )$ for all $u,v$
 
-\item The \href{https://www.cl.cam.ac.uk/teaching/2324/Algorithm1/content/algorithms2.pdf}{notes from 2024} use a different Dijkstra's implementation. Please read the relevant part of the notes, and explain how the implementation differs from the one you saw on your lecture. What do you think, which one is faster in better?
+\item The \href{https://www.cl.cam.ac.uk/teaching/2324/Algorithm1/content/algorithms2.pdf}{notes from 2024} use a different Dijkstra's implementation. Please read the relevant part of the notes and explain how the implementation differs from the one you saw in your lecture. What do you think, which one is faster or better?
 
 \item Show that the old note's Dijkstra's algorithm eventually terminates with the correct result if the graph has negative-weight edges, but no negative cycles. What is its worst-case complexity for these graphs?
 

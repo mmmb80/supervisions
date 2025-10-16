@@ -30,11 +30,11 @@
 Consider a variant of a double-ended queue (deque) that supports the following operations:
 
 \begin{itemize}
-    \item \texttt{removeFirst}$(k)$ removes the first $k$ elements from the front of the deque (or clear it if there are less then $k$ elements).
+    \item \texttt{removeFirst}$(k)$ removes the first $k$ elements from the front of the deque (or clears it if there are fewer than $k$ elements).
     \item \texttt{add}$(r)$ removes all elements in the deque that are greater than $r$, then inserts $r$ at the end.
 \end{itemize}
 
-Design an efficient data structure that supports these operations and analyze their amortized cost.
+Design an efficient data structure that supports these operations and analyse their amortised cost.
 
 \item
     Consider an undirected graph with $n$ vertices, where the edges can be coloured blue or white, and which starts with no edges. The graph can be modified using these operations:
@@ -46,15 +46,15 @@ Design an efficient data structure that supports these operations and analyze th
     \item \texttt{is\_blue}$(u,v)$ returns \texttt{True} if and only if the edge $u \leftrightarrow v$ is blue.
 \end{itemize}
 
-Give an efficient algorithm that supports these operations, and analyse its amortized cost.
+Give an efficient algorithm that supports these operations, and analyse its amortised cost.
 
-Extend your algorithm to also support the following operation, and analyse its amortized cost:
+Extend your algorithm to also support the following operation, and analyse its amortised cost:
 
 \begin{itemize}
     \item \texttt{are\_blue\_connected}$(u,v)$ returns \texttt{True} if and only if $u$ and $v$ are connected by a blue path.
 \end{itemize}
 
-Extend your algorithm to also support the following operation, and analyse its amortized cost:
+Extend your algorithm to also support the following operation, and analyse its amortised cost:
 
 \begin{itemize}
     \item \texttt{remove\_blue\_from\_component}$(v)$ deletes all blue edges between pairs of nodes in the blue-connected component containing $v$.
@@ -95,13 +95,13 @@ A(x)B(x) = A_1(x)B_1(x) x^{2n} + ((A_1(x) + A_0(x))(B_1(x) + B_0(x)) - A_0(x)B_0
 
 \item 
 
-The Travelling Salesman Problem (TSP) is a classic combinatorial optimization problem. Given a set ($V$) of $n$ cities, a ``source'' city $s\in V$ and a distance function $d(i, j)$ that defines the cost of travelling between any two cities $i$ and $j$, the goal is to find the shortest possible route that visits each city exactly once starting from city $s$.
+The Travelling Salesman Problem (TSP) is a classic combinatorial optimisation problem. Given a set ($V$) of $n$ cities, a ``source'' city $s\in V$ and a distance function $d(i, j)$ that defines the cost of travelling between any two cities $i$ and $j$, the goal is to find the shortest possible route that visits each city exactly once starting from city $s$.
 \begin{enumerate}
     \item Write a brute-force method to solve the problem. What is the time complexity of your solution?
     \item Write dynamic programming equations for $\mathrm{DP}(S,v)$ for each $S\subseteq V$ and $v \in V$, where $\mathrm{DP}(S,v)$ is the minimum  cost to visit every city in $S$ starting from $v$. What is the time complexity of the resulting DP algorithm?
     \item Show that the time complexity of the Travelling Salesman problem is $\Omega(n \log n)$. 
 
-    \emph{ Hint: How many branching clauses (e.g. if-else, switch statements etc.) do you need to enter? The argument is similar to the sorting lower bound.}
+    \emph{ Hint: How many branching clauses (e.g. if-else, switch statements, etc.) do you need to enter? The argument is similar to the sorting lower bound.}
    
 \end{enumerate}
 

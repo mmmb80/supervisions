@@ -23,14 +23,14 @@
 \section{Dynamic Programming}
 
 \begin{enumerate}
-    \item You are given $n$ boxes, so that the weight of the $i$-th box is $w[i]$ and the height of the box is $h[i]$. You would like to build a tower by putting some boxes on top of each other. However, you can only put box $A$ on top of box $B$ if A has a smaller height and smaller weight. Design an algorithm to find the maximum height of such a tower.
+    \item You are given $n$ boxes, so that the weight of the $i$-th box is $w[i]$ and the height of the box is $h[i]$. You would like to build a tower by putting some boxes on top of each other. However, you can only put box $A$ on top of box $B$ if $A$ has a smaller height and smaller weight. Design an algorithm to find the maximum height of such a tower.
     \item
 
-    You are given an $N \times M$ grid. The field in row $i$ and column $j$ contains $A[i,j]\geq0$ golden coins, Some fields are forbidden: If the field in row $i$ and column $j$ is forbidden, $B[i,j] = 1$, otherwise $B[i,j]=0$. Your goal is to go from the top left corner $(1,1)$ to the bottom right $(N,M)$, collecting as many coins as possible. In one step, you can move one step right or one step down. You are never allowed to move to forbidden fields.
+    You are given an $N \times M$ grid. The field in row $i$ and column $j$ contains $A[i,j]\geq 0$ golden coins. Some fields are forbidden: If the field in row $i$ and column $j$ is forbidden, $B[i,j] = 1$; otherwise $B[i,j]=0$. Your goal is to go from the top left corner $(1,1)$ to the bottom right $(N, M)$, collecting as many coins as possible. In one step, you can move one step right or one step down. You are never allowed to move to forbidden fields.
     \begin{enumerate}
-        \item Design an algorithm that finds the best route you can take (given $N,M,A,B$).
-        \item How would you change your algorithm if you are allowed to move one step up as well (you won't get extra coins if you visit a field twice. You are also not allowed to leave the grid)?
-        \item And if you can move to all four directions?
+        \item Design an algorithm that finds the best route you can take (given $N, M, A, B$).
+        \item How would you change your algorithm if you are allowed to move one step up as well? You won't get extra coins if you visit a field twice. You are also not allowed to leave the grid.
+        \item What if you can move in all four directions?
     \end{enumerate}
     
     
@@ -50,11 +50,11 @@
     \end{verbatim}
     in Java.
 
-    Design an algorithm that finds the longest path in the tree. See example below\\ \emph{(please note that the longest path is not necessarily the longest downward path from the root, it may include both upwards and downwards steps)}:
+    Design an algorithm that finds the longest path in the tree. See example below.\\ \emph{(please note that the longest path is not necessarily the longest downward path from the root, it may include both upwards and downwards steps)}
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.32\linewidth]{longest-path.png}
-        \caption{Longest path is labelled red}
+        \caption{Q3: Longest path is labelled red}
         \label{fig:enter-label}
     \end{figure}
 \end{enumerate}

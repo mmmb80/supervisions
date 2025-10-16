@@ -31,20 +31,20 @@
         \item integers that are not divisible by three
     \end{enumerate}
 
-    \item What happens if you run \verb|filter (x -> x mod 2 = 1)| on the sequence of even numbers? Why?
+    \item What happens if you run \verb|filter (fun x -> x mod 2 = 1)| on the sequence of even numbers? Why?
 
     \item Define a type representing rational numbers.  
     Then define a lazy list containing positive rational numbers.  
     A number may appear in the sequence multiple times, but all rational numbers should be in the sequence.
 
-    \item (Optional) Define a lazy list containing all finite sets of integers.  
+    \item Define a lazy list containing all finite sets of integers.  
     Is it possible to define a lazy list containing all sets of integers?
 \end{enumerate}
 
 % Q2
 \item
 \begin{enumerate}
-    \item Compare depth-first search, breadth-first search and iterative deepening.  
+    \item Compare depth-first search, breadth-first search and iterative deepening.
     What factors decide which technique should be used in a certain scenario?
 
     \item A lazy binary tree is either empty or is a branch containing a label and two lazy binary trees, possibly to infinite depth.  
@@ -55,7 +55,7 @@
 
     \item How would you traverse a tree described in part (c)?
 
-    \item (Optional) Define a lazy tree with arbitrarily long paths (i.e. for any integer $n$, there exists a path of length $n$), that has no infinite-length path.
+    \item Define a lazy tree with arbitrarily long paths (i.e. for any integer $n$, there exists a path of length $n$), that has no infinite-length path.
 \end{enumerate}
 
 \end{enumerate}
